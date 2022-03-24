@@ -1,0 +1,62 @@
+<form method="post" 
+  (ngSubmit)="onSubmit()"
+  #f="ngForm"
+  class="add-review-form">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Object type</mat-label>
+    <mat-select [(ngModel)] = "objType" 
+      name = "obj-type" 
+      (ngModelChange)="onItemChange($event)">
+      <mat-option *ngFor="let t of listObjTypes" [value]="t">
+        {{t}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    
+
+    <mat-form-field class="example-full-width" 
+      appearance="fill"
+      *ngIf = "objType">
+    <mat-label>Object</mat-label>
+    <input matInput
+           aria-label="Object"
+           [matAutocomplete]="auto"
+           [formControl]="stateCtrl"
+           [(ngModel)]="review.obj"
+           name="review">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
+      <mat-option *ngFor="let object of filteredObjects | async" [value]="object">
+        <img class="example-option-img" aria-hidden [src]="object.picture" height="25">
+        <span>{{object.name}}</span>
+        <!--<small>Population: {{state.population}}</small>-->
+      </mat-option>
+
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+    <mat-form-field class="example-full-width mb-3" 
+      appearance="fill" *ngIf="review.obj">
+        <mat-label>Заголовок</mat-label>
+        <input matInput 
+          [(ngModel)]="review.title"
+          placeholder="Заголовок"
+          name="review-title">
+      </mat-form-field>
+    
+
+      <mat-form-field class="example-full-width mb-3" 
+        appearance="fill" *ngIf="review.obj">
+        <mat-label>Leave a review</mat-label>
+        <textarea matInput [(ngModel)]="review.comment" 
+        placeholder="Ex. It makes me feel..." 
+        rows="20" name="review-text">
+      </textarea>
+      </mat-form-field>
+
+</form>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onSubmit()">Send</button>
+</mat-dialog-actions>

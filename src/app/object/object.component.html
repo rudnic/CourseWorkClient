@@ -1,0 +1,33 @@
+
+<div class = "object-profile">
+    <div class="row">
+
+        <div class="col-3 object-avatar">
+            <div class="avatar">
+                <!-- <img> -->
+            </div>
+        </div>
+
+        <div class="col object-info">
+            <h4>{{ object.name }}</h4>
+            <h5>{{ object.type}}</h5>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col object-reviews">
+
+            <div *ngFor = "let review of object.reviews">
+                <div class="review">
+                    <p>
+                        <a href = "{{ 'user/' + review.user.id }}">{{review.user.firstname +  review.user.lastname}}</a>
+                    </p>
+                    <h3 class="review-header">{{ review.header }}</h3>
+                    <p>{{ review.text }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

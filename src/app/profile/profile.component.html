@@ -1,0 +1,20 @@
+<div class = "user-profile">
+    <div class="row">
+
+        <div class="col-3 user-avatar">
+            <div class="avatar">
+                <!-- <img> -->
+            </div>
+        </div>
+
+        <div class="col user-info">
+            <h4>{{ currentProfile.firstname}} {{ currentProfile.lastname }}</h4>
+            <h5>{{ currentProfile.email }}</h5>
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <app-profile-reviews [reviews] = "currentProfile.reviews"></app-profile-reviews>
+</div>

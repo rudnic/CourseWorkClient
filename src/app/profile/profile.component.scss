@@ -1,0 +1,29 @@
+.user-profile {
+    margin: 2rem;
+
+    .user-info {
+        margin-left: 2rem;
+        background-color: rgb(245, 245, 245);
+        padding: 0.8vw;
+        border-radius: 1.5%;
+    }
+
+
+    .user-avatar {
+        border-radius: 1.5%;
+        background-color: rgb(245, 245, 245); 
+        height: 25vw;
+
+        .avatar {
+            border-radius: 1%;
+            height: 70%;
+            width: 95%;
+            margin: 5% 2.5%;
+            background-color: #fff;
+        }
+    }
+}
+
+.mat-elevation-z8 {
+    width: 100%;
+}
