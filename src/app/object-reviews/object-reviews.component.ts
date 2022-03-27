@@ -4,19 +4,19 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddReviewFormComponent } from '../add-review-form/add-review-form.component';
-import { ReviewsProfileDto } from '../dto/profile_dto/ReviewsProfileDto';
+import { ReviewsObjectDto } from '../dto/object_dto/ReviewsObjectDto';
 
 @Component({
-  selector: 'app-profile-reviews',
-  templateUrl: './profile-reviews.component.html',
-  styleUrls: ['./profile-reviews.component.scss']
+  selector: 'app-object-reviews',
+  templateUrl: './object-reviews.component.html',
+  styleUrls: ['./object-reviews.component.scss']
 })
-export class ProfileReviewsComponent implements AfterViewInit {
+export class ObjectReviewsComponent implements AfterViewInit {
 
-  @Input() reviews: ReviewsProfileDto[]
+  @Input() reviews: ReviewsObjectDto[]
 
-  displayedColumns: string[] = ['object', 'type', 'header', 'text'];
-  dataSource: MatTableDataSource<ReviewsProfileDto>;
+  displayedColumns: string[] = ['user', 'header', 'text'];
+  dataSource: MatTableDataSource<ReviewsObjectDto>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -42,10 +42,12 @@ export class ProfileReviewsComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
 
     this.dataSource.filterPredicate = (data, filter) => {
-      return data.object.name.toLocaleLowerCase().includes(filter) ||
+      return data.user.firstname.toLocaleLowerCase().includes(filter) ||
+        data.user.lastname.toLocaleLowerCase().includes(filter) ||
         data.header.toLocaleLowerCase().includes(filter) ||
         data.text.toLocaleLowerCase().includes(filter);
     };
+    console.log("IM HEREE", this.reviews);
   }
 
   applyFilter(event: Event) {
@@ -57,4 +59,5 @@ export class ProfileReviewsComponent implements AfterViewInit {
     }
     
   }
+
 }

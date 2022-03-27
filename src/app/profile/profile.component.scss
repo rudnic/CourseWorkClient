@@ -8,6 +8,17 @@
         border-radius: 1.5%;
     }
 
+    .photos-section {
+
+        margin-top: 100px;
+
+        img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+
 
     .user-avatar {
         border-radius: 1.5%;
@@ -19,6 +30,7 @@
             height: 70%;
             width: 95%;
             margin: 5% 2.5%;
+            // margin-bottom: 5%;
             background-color: #fff;
         }
     }
@@ -26,4 +38,8 @@
 
 .mat-elevation-z8 {
     width: 100%;
+}
+
+.upload-user-image-btn, .upload-user-image {
+    margin-left: 5rem;
 }

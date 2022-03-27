@@ -28,7 +28,7 @@
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
       <mat-option *ngFor="let object of filteredObjects | async" [value]="object">
         <img class="example-option-img" aria-hidden [src]="object.picture" height="25">
-        <span>{{object.name}}</span>
+        <span>{{ object.name }} {{ object.rating }}</span>
         <!--<small>Population: {{state.population}}</small>-->
       </mat-option>
 

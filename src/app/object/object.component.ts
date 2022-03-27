@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ObjectService } from '../services/object.service';
+import { ObjectDto } from 'src/app/dto/object_dto/ObjectDto'
+
 
 @Component({
   selector: 'app-object',
@@ -9,7 +11,7 @@ import { ObjectService } from '../services/object.service';
 })
 export class ObjectComponent implements OnInit {
 
-  object: any;
+  object: ObjectDto;
   param: string;
 
   constructor(private objectService: ObjectService, private route: ActivatedRoute) { }

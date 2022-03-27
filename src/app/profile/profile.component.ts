@@ -3,6 +3,7 @@ import { ProfileService } from '../services/profile.service';
 import {MatDialog} from '@angular/material/dialog';
 import { AddReviewFormComponent } from '../add-review-form/add-review-form.component';
 import { UserProfile } from '../dto/profile_dto/UserProfile';
+import { AddUserPhotoService } from '../services/add-user-photo.service';
 // import { UserProfile } from '../dto/profile_dto/UserProfile';
 
 
@@ -16,7 +17,8 @@ export class ProfileComponent implements OnInit {
   currentProfile: UserProfile;
   isClickedAddReviewButton: boolean = false;
 
-  constructor(private profileService: ProfileService, public dialog: MatDialog) { }
+  constructor(private profileService: ProfileService, public dialog: MatDialog, 
+    private addPhotoService: AddUserPhotoService) { }
 
   ngOnInit(): void {
     this.profileService.getProfile()
@@ -30,6 +32,11 @@ export class ProfileComponent implements OnInit {
       return true;
     }
     return false;
+  }
+  
+  uploadomplete(info: any) {
+    console.log(info.count, info.uuid);
+    this.addPhotoService.addPhotos(info.count, info.uuid);
   }
 
 }

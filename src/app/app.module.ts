@@ -28,6 +28,9 @@ import { ProfileReviewsComponent } from './profile-reviews/profile-reviews.compo
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule} from '@angular/material/paginator';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { UcWidgetModule } from 'ngx-uploadcare-widget';
+import { ObjectReviewsComponent } from './object-reviews/object-reviews.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     ObjectsListComponent,
     ObjectComponent,
     AddReviewFormComponent,
-    ProfileReviewsComponent
+    ProfileReviewsComponent,
+    UploadFileComponent,
+    ObjectReviewsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     MatGridListModule,
     MatSortModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    UcWidgetModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

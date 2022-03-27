@@ -1,9 +1,9 @@
-import { ObjectDto } from "../ObjectsListDto";
+import { ObjectListDto } from "../ObjectsListDto";
 
 export class ReviewsProfileDto {
     constructor(
         public header: string,
-        public object: ObjectDto,
+        public object: ObjectListDto,
         public text: string
     ) {}
 }

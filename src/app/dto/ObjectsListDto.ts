@@ -1,4 +1,4 @@
-export class ObjectDto {
+export class ObjectListDto {
     constructor(
       public id: BigInteger,
       public type: string,

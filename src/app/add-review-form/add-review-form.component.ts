@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
 import { ObjectsListService } from '../services/objects-list.service';
 import { AddReviewService } from '../services/add-review.service';
-import { ObjectDto } from '../dto/ObjectsListDto';
+import { ObjectListDto } from '../dto/ObjectsListDto';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class AddReviewFormComponent implements OnInit {
 
   stateCtrl = new FormControl();
-  filteredObjects: Observable<ObjectDto[]>;
+  filteredObjects: Observable<ObjectListDto[]>;
 
   review: any = {
     obj: null,
@@ -62,7 +62,7 @@ export class AddReviewFormComponent implements OnInit {
 
   }
 
-  displayFunction(obj: ObjectDto): string {
+  displayFunction(obj: ObjectListDto): string {
     return obj.name;
   }
 

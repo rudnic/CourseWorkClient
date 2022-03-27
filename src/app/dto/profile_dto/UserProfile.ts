@@ -1,5 +1,6 @@
-import { ObjectDto } from "../ObjectsListDto";
+import { ObjectListDto } from "../ObjectsListDto";
 import { ReviewsProfileDto } from "./ReviewsProfileDto";
+import { UserPhoto } from "./UserPhoto";
 
 export class UserProfile {
     constructor(
@@ -7,7 +8,8 @@ export class UserProfile {
       public email: string,
       public firstname: string,
       public lastname: string,
-      public ratingsObjects: Object[],
-      public reviews: ReviewsProfileDto[]
+      public ratingsObjects: ObjectListDto[],
+      public reviews: ReviewsProfileDto[],
+      public photos: UserPhoto[]
     ) {}
   }

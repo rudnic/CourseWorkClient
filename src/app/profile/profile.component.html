@@ -5,11 +5,32 @@
             <div class="avatar">
                 <!-- <img> -->
             </div>
+
+            <p class="upload-user-image">Загрузить фото:</p>
+
+            <ngx-uploadcare-widget class="upload-user-image-btn"
+            (on-upload-complete)="uploadomplete($event)"
+            public-key="2c4cb1655e22b219f1da"
+            [multiple]="true"
+            [multiple-min]=1
+            [multiple-max]=3
+            [preview-step]="true"
+            >
+        </ngx-uploadcare-widget>
+
         </div>
+
 
         <div class="col user-info">
             <h4>{{ currentProfile.firstname}} {{ currentProfile.lastname }}</h4>
             <h5>{{ currentProfile.email }}</h5>
+            
+            <div class="row photos-section">
+                <span class="col-3 user-photo" *ngFor = "let photo of currentProfile.photos">
+                    <img src = "https://ucarecdn.com/{{ photo.uuid }}/">
+                </span>
+            </div>
+
         </div>
 
     </div>

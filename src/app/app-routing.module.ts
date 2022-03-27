@@ -6,13 +6,15 @@ import { ObjectComponent } from './object/object.component';
 import { ObjectsListComponent } from './objects-list/objects-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 const routes: Routes = [
   { path: 'signin', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'objects', component: ObjectsListComponent },
-  { path: 'object/:id', component: ObjectComponent }
+  { path: 'object/:id', component: ObjectComponent },
+  { path: 'upload', component: UploadFileComponent }
 ];
 
 @NgModule({
