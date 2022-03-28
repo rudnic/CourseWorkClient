@@ -3,7 +3,7 @@
 
     .object-info {
         margin-left: 2rem;
-        background-color: rgb(245, 245, 245);
+        background-color: rgb(250, 250, 250);
         padding: 2rem;
         border-radius: 1.5%;
     }
@@ -11,13 +11,13 @@
     .review {
         margin-top: 2rem;
         border-radius: 1.5%;
-        background-color: rgb(245, 245, 245);
+        background-color: rgb(250, 250, 250);
         padding: 2rem;
     }
 
     .object-avatar {
         border-radius: 1.5%;
-        background-color: rgb(245, 245, 245); 
+        background-color: rgb(250, 250, 250); 
         height: 25vw;
 
         .avatar {
@@ -26,6 +26,11 @@
             width: 95%;
             margin: 5% 2.5%;
             background-color: #fff;
+            img {
+                height: auto;
+                width: 100%;
+                object-fit: cover;
+            }
         }
     }
 }

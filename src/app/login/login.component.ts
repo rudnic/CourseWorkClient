@@ -29,8 +29,7 @@ export class LoginComponent {
         window.location.href = '/profile';
       },
       err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
+        alert(err.message);
       }
     );
   }

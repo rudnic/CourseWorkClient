@@ -2,24 +2,38 @@
 
     <h3 style="text-align: center; margin: 3rem;">Авторизоваться</h3>
 
-    <form class="col-6">
+    <form class="col-6"
+        name="form"
+        (ngSubmit)="onSubmit()">
         <div class="form-outline mb-4">
-            <input type="email" class="form-control" />
+            <input type="email" class="form-control" 
+                name="username"
+                [(ngModel)]="form.username"
+            />
             <label class="form-label">Email address</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" 
+                name="firstname"
+                [(ngModel)]="form.firstname"
+            />
             <label class="form-label">Firstname</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" 
+                name="lastname"
+                [(ngModel)]="form.lastname"    
+            />
             <label class="form-label">Lastname</label>
         </div>
     
         <div class="form-outline mb-4">
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" 
+                name="password"
+                [(ngModel)]="form.password"
+            />
             <label class="form-label">Password</label>
         </div>
     
@@ -33,3 +47,4 @@
     </form>
 
 </div>
+

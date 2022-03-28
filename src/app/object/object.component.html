@@ -4,13 +4,25 @@
 
         <div class="col-3 object-avatar">
             <div class="avatar">
-                <!-- <img> -->
+                <img src = "{{ object.picture }}">
             </div>
         </div>
 
         <div class="col object-info">
-            <h4>{{ object.name }}</h4>
-            <h5>{{ object.type}}</h5>
+            <h4>Name: {{ object.name }}</h4>
+            <br>
+            <h5>Type: {{ object.type}}</h5>
+            <br>
+            <h6>Author: {{ object.author }}</h6>
+            <br>
+            <p>Rating: {{ object.rating }}</p>
+            <br>
+            <p *ngIf = "checkUserRating()">
+                Не оценено
+            </p>
+            <p *ngIf = "!checkUserRating()">
+                Оценено: {{ userRating }}
+            </p>
         </div>
 
     </div>

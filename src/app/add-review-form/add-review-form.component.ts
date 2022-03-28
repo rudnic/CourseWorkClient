@@ -5,6 +5,7 @@ import { ObjectsListService } from '../services/objects-list.service';
 import { AddReviewService } from '../services/add-review.service';
 import { ObjectListDto } from '../dto/ObjectsListDto';
 import { MatDialog } from '@angular/material/dialog';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-review-form',
@@ -55,10 +56,13 @@ export class AddReviewFormComponent implements OnInit {
     return this.listObjects.filter(obj => obj.name.toLowerCase().includes(filterValue));
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const { obj, title, comment } = this.review;
-    this.addReviewService.addReview(obj, this.objType, title, comment);
-    console.log(obj, this.objType, title, comment);
+    this.addReviewService.addReview(obj, this.objType, title, comment).subscribe(
+      () => {
+        location.reload();
+      }
+    )
 
   }
 

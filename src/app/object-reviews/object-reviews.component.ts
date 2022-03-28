@@ -47,7 +47,6 @@ export class ObjectReviewsComponent implements AfterViewInit {
         data.header.toLocaleLowerCase().includes(filter) ||
         data.text.toLocaleLowerCase().includes(filter);
     };
-    console.log("IM HEREE", this.reviews);
   }
 
   applyFilter(event: Event) {
