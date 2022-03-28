@@ -31,6 +31,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { UcWidgetModule } from 'ngx-uploadcare-widget';
 import { ObjectReviewsComponent } from './object-reviews/object-reviews.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ObjectReviewsComponent } from './object-reviews/object-reviews.componen
     MatSortModule,
     MatTableModule,
     MatPaginatorModule,
-    UcWidgetModule
+    UcWidgetModule,
+    NgbModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.profileService.getProfile()
       .subscribe(response => {
-        this.currentProfile = response
+        this.currentProfile = response;
       })
   }
 
@@ -35,8 +35,17 @@ export class ProfileComponent implements OnInit {
   }
   
   uploadomplete(info: any) {
-    console.log(info.count, info.uuid);
     this.addPhotoService.addPhotos(info.count, info.uuid);
+    location.reload();
+  }
+
+  getFirstPhoto(): string {
+    if (this.currentProfile.photos.length == 0) {
+      return "https://clck.ru/eYMkD"
+    }
+    else {
+      return 'https://ucarecdn.com/' + this.currentProfile.photos[0].uuid + '/';
+    }
   }
 
 }

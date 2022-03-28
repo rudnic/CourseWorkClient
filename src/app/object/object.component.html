@@ -15,14 +15,14 @@
             <br>
             <h6>Author: {{ object.author }}</h6>
             <br>
-            <p>Rating: {{ object.rating }}</p>
+            <p>{{ objectRating }}</p>
             <br>
-            <p *ngIf = "checkUserRating()">
-                Не оценено
-            </p>
-            <p *ngIf = "!checkUserRating()">
-                Оценено: {{ userRating }}
-            </p>
+            <div class="user-rating-section">
+                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                <hr>
+                <pre><b>{{currentRate}}</b></pre>
+                <button type="button" *ngIf="currentRate !== selectedRate" (click)="onClickRating()">Update Rating</button>
+            </div>
         </div>
 
     </div>
